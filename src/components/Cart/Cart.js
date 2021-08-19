@@ -1,7 +1,6 @@
 import classes from "./Cart.module.css"
 import Modal from "../UI/Modal"
-
-import React from "react";
+import React, {useState} from "react";
 
 
 const Cart = (props) => {
@@ -16,24 +15,30 @@ const Cart = (props) => {
    ]
        .map((item) => <li key={item.id}> {item.name} </li>)
 
+
+
    return (
-       <Modal>
-          <ul className={classes["cart-items"]}>
-             {cartItems}
-          </ul>
-          <div className={classes.total}>
-             <span> Total amount</span>
-             <span> 34.99</span>
-          </div>
-          <div className={classes.actions}>
-             <button className={classes["button__alt"]}>
-                Close
-             </button>
-             <button className={classes.button}>
-                Order
-             </button>
-          </div>
-       </Modal>
+       <div>
+          {props.modalState ? <Modal>
+             <ul className={classes["cart-items"]}>
+                {cartItems}
+             </ul>
+             <div className={classes.total}>
+                <span> Total amount</span>
+                <span> 34.99</span>
+             </div>
+             <div className={classes.actions}>
+                <button onClick={props.onCloseModal} className={classes["button__alt"]}>
+                   Close
+                </button>
+                <button className={classes.button}>
+                   Order
+                </button>
+             </div>
+          </Modal> : null
+          }
+
+       </div>
    )
 }
 

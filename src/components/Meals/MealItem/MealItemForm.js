@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 import classes from "./MealItemForm.module.css"
 import Input from "../../UI/Input";
+import ModalContext from "../../../context/ModalContext";
 
 
 const MealItemForm = (props) => {
+   const context = useContext(ModalContext)
 
 
    return (
@@ -17,7 +19,7 @@ const MealItemForm = (props) => {
              defaultValue : 1,
           }}
           />
-          <button> + Add</button>
+          <button onClick={() => context.setModalIsOpen(true)}> + Add</button>
        </form>
    )
 }
