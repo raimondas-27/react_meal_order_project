@@ -1,16 +1,18 @@
 import './App.css';
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
+import Cart from "./components/Cart/Cart";
 
 function App() {
-  return (
-    <div className="App">
-      <Header/>
-       <main>
-          <Meals/>
-       </main>
-    </div>
-  );
+   return (
+       <div className="App">
+          <Cart/>
+          <Header/>
+          <main>
+             <Meals/>
+          </main>
+       </div>
+   );
 }
 
 export default App;
