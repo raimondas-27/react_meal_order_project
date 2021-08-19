@@ -14,7 +14,7 @@ const Cart = (props) => {
          price: 12.99
       }
    ]
-       .map((item) => <li> {item.name} </li>)
+       .map((item) => <li key={item.id}> {item.name} </li>)
 
    return (
        <Modal>
