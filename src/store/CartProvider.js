@@ -10,15 +10,14 @@ const defaultCartState = {
 const cartReducer = (state, action) => {
    switch (action.type) {
       case "ADD" :
-
          const {item} = action;
-
          const updatedItems = [...state.items, item];
          const updatedAmount = state.totalAmount + item.price * item.amount
          return {
             items: updatedItems,
             totalAmount: updatedAmount,
          };
+
       case "REMOVE" :
          throw new Error("remove item not completed");
       default:

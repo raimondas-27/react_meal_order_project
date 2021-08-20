@@ -3,13 +3,11 @@ import classes from "./Input.module.css"
 import React from "react";
 
 
-const Input = (props) => {
+const Input = ({ label, input, value, onChange }) => {
    return (
-       <div>
-          <label htmlFor={props.input.id}>
-             {props.label}
-          </label>
-          <input {...props.input} />
+       <div className={classes.input}>
+          <label htmlFor={input.id}>{label}</label>
+          <input value={value} onChange={onChange} {...input} />
        </div>
    )
 }
