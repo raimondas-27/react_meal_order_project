@@ -20,7 +20,7 @@ const cartReducer = (state, action) => {
 
       case "REMOVE" :
          throw new Error("remove item not completed");
-      default:
+      default :
          return state;
    }
 }
