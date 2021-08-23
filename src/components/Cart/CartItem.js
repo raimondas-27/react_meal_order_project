@@ -1,11 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import classes from "./CartItem.module.css"
-
 
 const CartItem = (props) => {
   const price = `$${props.price.toFixed(2)}`;
-
-
   return (
     <li className={classes["cart-item"]}>
       <div>
@@ -16,8 +13,8 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={classes.actions}>
-        <button onClick={props.onCartItemAddHandler}> + </button>
-        <button onClick={props.onCartRemoveHandler}> - </button>
+        <button onClick={props.onAddItem}> + </button>
+        <button onClick={props.onRemoveItem}> - </button>
       </div>
     </li>
   );
