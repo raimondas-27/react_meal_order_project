@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import './App.css';
 
 
@@ -8,6 +8,7 @@ import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 import Chat from "./components/Chat/Chat"
+import Join from "./components/Chat/Join";
 
 
 function App() {
@@ -30,16 +31,26 @@ function App() {
    }
 
    return (
-       <CartProvider>
-          {cartIsShown && <Cart onClose={hideCartHandler}/>}
-          {chatIsShown && <Chat onClose={hideChatHandler}/>}
-          <Header onShownChat={showChatHandler}
-                  onShowCart={showCartHandler}
-          />
-          <main>
-             <Meals/>
-          </main>
-       </CartProvider>
+       <div>
+          <Router>
+             <Switch>
+                <Route exact path="/" render={(props) =>
+                    <CartProvider {...props}>
+                   {cartIsShown && <Cart onClose={hideCartHandler}/>}
+                   <Header onShownChat={showChatHandler}
+                           onShowCart={showCartHandler}
+                   />
+                   <main>
+                      <Meals/>
+                   </main>
+                </CartProvider>
+                }
+                />
+                <Route path="/join" component={Join} />
+                <Route path="/chat" component={Chat} />
+             </Switch>
+          </Router>
+       </div>
    );
 }
 
