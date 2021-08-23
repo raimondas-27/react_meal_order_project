@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Food app with chat",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raimondas-27/react_meal_order_project.git"
+  },
+  "author": "R.K.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raimondas-27/react_meal_order_project/issues"
+  },
+  "homepage": "https://github.com/raimondas-27/react_meal_order_project#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "socket.io": "^4.1.3"
+  }
+}
